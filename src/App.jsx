@@ -1,4 +1,5 @@
 import React from 'react'
+import './app.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SearchBar from './components/SearchBar';
 import ProductForm from './components/ProductForm';

@@ -30,7 +30,7 @@ function Home() {
         <div className="w-full min-h-screen  bg-linear-to-b from-white to-pink-200">
             <ViewToggle view={view} setView={setView} />
             {view === 'table' ? <ProductTable products={paginatedProducts} /> : <ProductCard products={paginatedProducts} />}
-            {totalPages > 1 && (
+            {totalPages  && (
                 <div className="flex justify-center mt-6">
                     <Pagination
                         page={currentPage}

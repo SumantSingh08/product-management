@@ -29,23 +29,23 @@ export default function SearchBar() {
       type="text"
       placeholder="Search products..."
       onChange={(e) => setValue(e.target.value)}
-      className="w-full md:max-w-md border rounded-full py-2.5 px-4 text-sm
+      className="w-full md:max-w-md border rounded-full py-2.5 px-4 text-sm outline-none
                  focus:outline-none focus:ring-2 focus:ring-white
-                 bg-white text-gray-700 placeholder:text-gray-500"
+                 bg-white  placeholder:text-gray-500"
     />
 
     {/* Buttons */}
     <div className="flex justify-center md:justify-end gap-3 flex-wrap">
       <button
         onClick={() => navigate('/')}
-        className="bg-white text-orange-500 px-4 py-2 rounded-full font-semibold hover:bg-gray-100 transition"
+        className="bg-white text-orange-500 px-4 py-2 rounded-full font-semibold hover:bg-gray-100 transition cursor-pointer"
       >
         Home
       </button>
 
       <button
         onClick={() => navigate('/add-product')}
-        className="bg-white text-orange-500 px-4 py-2 rounded-full font-semibold hover:bg-gray-100 transition"
+        className="bg-white text-orange-500 px-4 py-2 rounded-full font-semibold hover:bg-gray-100 transition cursor-pointer"
       >
         Add Product
       </button>

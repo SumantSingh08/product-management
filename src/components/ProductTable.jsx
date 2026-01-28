@@ -1,14 +1,14 @@
 import React from 'react'
-import {setEditData} from '../app/ProductSlice'
+import { setEditData } from '../app/ProductSlice'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-function ProductTable({ products }) {
+function ProductTable({ products, isReadOnly }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const submit = (item) => {
     dispatch(setEditData(item));
     navigate('/add-product');
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
 
   }
   return (
@@ -44,11 +44,18 @@ function ProductTable({ products }) {
                 {item.stock}
               </td>
               <td className="px-4 py-3 text-gray-600">
-              {item.description ? item.description : '-'}
+                {item.description ? item.description : '-'}
               </td>
               <td>
-                <button onClick={() => submit(item)} className="mt-4 ml-5 mb-3 bg-blue-600 text-white py-2 px-3 rounded-lg hover:bg-blue-700 transition cursor-pointer">
-                  Edit 
+                <button
+                  disabled={isReadOnly}
+                  className={`px-3 py-1 rounded
+                 ${isReadOnly
+                      ? "bg-gray-300 cursor-not-allowed"
+                      : "bg-blue-500 hover:bg-blue-600 text-white"}
+                  `}
+                >
+                  Edit
                 </button>
               </td>
             </tr>

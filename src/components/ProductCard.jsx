@@ -11,7 +11,7 @@ function ProductCard({ products, isReadOnly }) {
     window.scrollTo(0, 0);
   })
   return (
-    <div className='w-full  p-4 md:p-8'>
+    <div className='w-full  p-4 md:p-20'>
       <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-2 sm:px-4">
         {products && products.length > 0 ? (products.map((item) => (
           <div
@@ -39,10 +39,11 @@ function ProductCard({ products, isReadOnly }) {
             </p>
             <button
               disabled={isReadOnly}
+              onClick={() => submit(item)}
               className={`mt-3 px-4 py-2 rounded w-full
              ${isReadOnly
                   ? "bg-gray-300 cursor-not-allowed"
-                  : "bg-green-500 hover:bg-green-600 text-white"}
+                  : "bg-green-500 hover:bg-green-600 text-white cursor-pointer"}
               `}
             >
               edit

@@ -1,6 +1,6 @@
 export default function ViewToggle({ view, setView }) {
   return (
-    <div className=" w-full p-4 md:p-8 flex gap-2 items-center justify-center sm:justify-start">
+    <div className=" w-full p-4 md:mx-18 flex gap-2 items-center justify-center sm:justify-start">
       <button
         onClick={() => setView('table')}
         className={`px-4 py-2 rounded-lg text-sm font-medium transition cursor-pointer

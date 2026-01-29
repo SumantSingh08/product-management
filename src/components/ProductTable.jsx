@@ -12,8 +12,8 @@ function ProductTable({ products, isReadOnly }) {
 
   }
   return (
-    <div className="w-full  p-4 md:p-8 overflow-x-auto">
-      <table className="w-full border border-gray-200 rounded-lg overflow-hidden">
+    <div className="w-full p-4  md:p-20 overflow-x-auto">
+      <table className="w-full border border-gray-200 rounded-lg overflow-hidden ">
         <thead className="bg-gray-100">
           <tr>
             <th className="text-left px-4 py-3 font-semibold text-gray-700">Name</th>
@@ -31,28 +31,29 @@ function ProductTable({ products, isReadOnly }) {
               key={item.id}
               className="border-t bg-white hover:bg-gray-50 transition"
             >
-              <td className="px-4 py-3 text-gray-800 font-medium">
+              <td className="text-sm md:text-base px-4 py-3 text-gray-800 font-medium">
                 {item.name}
               </td>
-              <td className="px-4 py-3 text-gray-700">
+              <td className="text-sm md:text-base px-4 py-3 text-gray-700">
                 ₹{item.price}
               </td>
-              <td className="px-4 py-3 text-gray-600">
+              <td className="text-sm md:text-base px-4 py-3 text-gray-600">
                 {item.category}
               </td>
-              <td className="px-4 py-3 text-gray-600">
+              <td className="text-sm md:text-base px-4 py-3 text-gray-600">
                 {item.stock}
               </td>
-              <td className="px-4 py-3 text-gray-600">
+              <td className="text-sm md:text-base px-4 py-3 text-gray-600">
                 {item.description ? item.description : '-'}
               </td>
               <td>
                 <button
                   disabled={isReadOnly}
+                  onClick={() => submit(item)}
                   className={`px-3 py-1 rounded
                  ${isReadOnly
                       ? "bg-gray-300 cursor-not-allowed"
-                      : "bg-blue-500 hover:bg-blue-600 text-white"}
+                      : "bg-green-500 hover:bg-green-600 text-white cursor-pointer"}
                   `}
                 >
                   Edit
